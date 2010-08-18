@@ -1,0 +1,34 @@
+<% if @property.listing_url %>
+  <p>
+    <b><a href="<%=h @property.listing_url %>">Original Listing</a></b>
+  </p>
+<% end %>
+
+<p>
+  <b>Price:</b>
+  <%=h number_to_currency(@property.price) %>
+</p>
+
+<p>
+  <b>Bedrooms:</b>
+  <%=h @property.bedrooms %>
+</p>
+
+<p>
+  <b>Bathrooms:</b>
+  <%=h @property.bathrooms %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @property.notes %>
+</p>
+
+<p>
+  <b>Address:</b><br/>
+  <%=h @property.street %><br/>
+  <%=h @property.city %>, <%=h @property.state %>&nbsp;&nbsp;<%=h @property.zip %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

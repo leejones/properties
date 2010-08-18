@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  price: 9.99
+  bedrooms: 1
+  bathrooms: 9.99
+  notes: MyText
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  listing_url: MyString
+
+two:
+  price: 9.99
+  bedrooms: 1
+  bathrooms: 9.99
+  notes: MyText
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  listing_url: MyString
