@@ -1,0 +1,18 @@
+<p>
+  <b>Property:</b>
+  <%=h @photo.property_id %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @photo.url %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%=h @photo.caption %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
