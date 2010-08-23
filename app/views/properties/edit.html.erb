@@ -1,66 +1,6 @@
 <h1>Editing property</h1>
 
-<% form_for(@property) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </p>
-  <p>
-    <%= f.label :bedrooms %><br />
-    <%= f.text_field :bedrooms %>
-  </p>
-  <p>
-    <%= f.label :bathrooms %><br />
-    <%= f.text_field :bathrooms %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </p>
-  <p>
-    <%= f.label :street %><br />
-    <%= f.text_field :street %>
-  </p>
-  <p>
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </p>
-  <p>
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
-  </p>
-  <p>
-    <%= f.label :listing_url %><br />
-    <%= f.text_field :listing_url %>
-  </p>
-  
-  <% f.fields_for :photos do |photo| %>
-    <p>
-      <%= photo.label :url, "Photo url" %>
-      <%= photo.text_field :url %>
-    </p>
-
-    <p>
-      <%= photo.label :caption, "Photo caption" %>
-      <%= photo.text_field :caption %>      
-    </p>
-    
-    <p>
-      <%= photo.check_box :_destroy %>
-      <%= photo.label :_destroy, "Remove photo?" %>
-    </p>
-  <% end %>
-  
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+<%= render :partial => "form", :locals => { :button_text => "Update" } %>
 
 <%= link_to 'Show', @property %> |
 <%= link_to 'Back', properties_path %>

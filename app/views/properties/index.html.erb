@@ -1,28 +1,12 @@
-<h1>Listing properties</h1>
+<h1>Properties</h1>
 
-<table>
-  <tr>
-    <th>Rent</th>
-    <th>BR</th>
-    <th>BA</th>
-    <th>Notes</th>
-    <th>Address</th>
-  </tr>
+<h2>Favorites</h2>
 
-<% @properties.each do |property| %>
-  <tr>
-    <td><%=h number_to_currency(property.price) %></td>
-    <td><%=h property.bedrooms %></td>
-    <td><%=h property.bathrooms %></td>
-    <td><%=h truncate(property.notes) %></td>
-    <td><%=h truncate(property.street) %>, <%=h property.city %></td>
-    <td><%= link_to 'Show', property %></td>
-    <td><%= link_to 'Edit', edit_property_path(property) %></td>
-    <td><%= link_to 'Destroy', property, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => "properties", :locals => { :properties => @favorite_properties }%>
 
-<br />
+<h2>Others</h2>
+
+<%= render :partial => "properties", :locals => { :properties => @unfavorite_properties }%>
+
 
 <%= link_to 'New property', new_property_path %>

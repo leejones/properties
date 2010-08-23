@@ -2,7 +2,8 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.xml
   def index
-    @properties = Property.all
+    @favorite_properties = Property.favorites
+    @unfavorite_properties = Property.unfavorites
 
     respond_to do |format|
       format.html # index.html.erb
