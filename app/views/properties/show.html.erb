@@ -1,8 +1,8 @@
+<p>
 <% @property.photos.each do |photo| %>
-  <p>
-    <%= image_tag photo.url, :alt => photo.caption, :width => 300 %>
-  </p>
+    <%= image_tag photo.url, :alt => photo.caption, :width => 300, :style => "padding:5px" %>
 <% end %>
+</p>
 
 <% if @property.listing_url %>
   <p>
