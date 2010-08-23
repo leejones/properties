@@ -38,6 +38,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1/edit
   def edit
     @property = Property.find(params[:id])
+    @property_types = PropertyType.all
   end
 
   # POST /properties
