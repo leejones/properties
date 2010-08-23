@@ -1,0 +1,19 @@
+<% form_for(@photo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :property_id %><br />
+    <%= f.collection_select(:property_id, @properties, :id, :street, {:prompt => true})  %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.label :caption %><br />
+    <%= f.text_field :caption %>
+  </p>
+  <p>
+    <%= f.submit button_text || "Submit" %>
+  </p>
+<% end %>

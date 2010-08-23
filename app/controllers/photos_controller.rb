@@ -25,6 +25,7 @@ class PhotosController < ApplicationController
   # GET /photos/new.xml
   def new
     @photo = Photo.new
+    @properties = Property.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class PhotosController < ApplicationController
   # GET /photos/1/edit
   def edit
     @photo = Photo.find(params[:id])
+    @properties = Property.all
   end
 
   # POST /photos

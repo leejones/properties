@@ -9,12 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100819013137) do
+ActiveRecord::Schema.define(:version => 20100823032236) do
 
   create_table "photos", :force => true do |t|
     t.integer  "property_id"
-    t.text     "url"
-    t.text     "caption"
+    t.string   "url"
+    t.string   "caption"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
