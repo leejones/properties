@@ -5,6 +5,7 @@
     <th>BA</th>
     <th>Notes</th>
     <th>Address</th>
+    <th>Type</th>
   </tr>
 
 <% properties.each do |property| %>
@@ -14,6 +15,7 @@
     <td><%=h property.bathrooms %></td>
     <td><%=h truncate(property.notes) %></td>
     <td><%=h truncate(property.street) %>, <%=h property.city %></td>
+    <td><%=h truncate(property.property_type.name) if property.property_type %></td>
     <td><%= link_to 'Show', property %></td>
     <td><%= link_to 'Edit', edit_property_path(property) %></td>
     <td><%= link_to 'Destroy', property, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -26,6 +26,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new.xml
   def new
     @property = Property.new
+    @property_types = PropertyType.all
     1.times { @property.photos.build }
     
     respond_to do |format|

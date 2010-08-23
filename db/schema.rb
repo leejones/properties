@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100823035321) do
+ActiveRecord::Schema.define(:version => 20100823041952) do
 
   create_table "photos", :force => true do |t|
     t.integer  "property_id"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(:version => 20100823035321) do
   end
 
   create_table "properties", :force => true do |t|
-    t.integer  "price",       :limit => 10, :precision => 10, :scale => 0
+    t.integer  "price",            :limit => 10, :precision => 10, :scale => 0
     t.integer  "bedrooms"
-    t.integer  "bathrooms",   :limit => 10, :precision => 10, :scale => 0
+    t.integer  "bathrooms",        :limit => 10, :precision => 10, :scale => 0
     t.text     "notes"
     t.string   "street"
     t.string   "city"
@@ -31,7 +31,15 @@ ActiveRecord::Schema.define(:version => 20100823035321) do
     t.string   "listing_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "favorite",                                                 :default => false
+    t.boolean  "favorite",                                                      :default => false
+    t.integer  "property_type_id"
+  end
+
+  create_table "property_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

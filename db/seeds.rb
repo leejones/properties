@@ -5,3 +5,8 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+
+["Home", "Apartment", "Townhouse"].each do |name|
+  PropertyType.find_or_create_by_name(name)
+end
