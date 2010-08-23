@@ -39,6 +39,24 @@
     <%= f.label :listing_url %><br />
     <%= f.text_field :listing_url %>
   </p>
+  
+  <% f.fields_for :photos do |photo| %>
+    <p>
+      <%= photo.label :url, "Photo url" %>
+      <%= photo.text_field :url %>
+    </p>
+
+    <p>
+      <%= photo.label :caption, "Photo caption" %>
+      <%= photo.text_field :caption %>      
+    </p>
+    
+    <p>
+      <%= photo.check_box :_destroy %>
+      <%= photo.label :_destroy, "Remove photo?" %>
+    </p>
+  <% end %>
+  
   <p>
     <%= f.submit 'Update' %>
   </p>

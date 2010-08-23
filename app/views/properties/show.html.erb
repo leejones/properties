@@ -1,3 +1,9 @@
+<% @property.photos.each do |photo| %>
+  <p>
+    <%= image_tag photo.url, :alt => photo.caption, :width => 300 %>
+  </p>
+<% end %>
+
 <% if @property.listing_url %>
   <p>
     <b><a href="<%=h @property.listing_url %>">Original Listing</a></b>

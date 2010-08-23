@@ -25,7 +25,8 @@ class PropertiesController < ApplicationController
   # GET /properties/new.xml
   def new
     @property = Property.new
-
+    1.times { @property.photos.build }
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @property }
