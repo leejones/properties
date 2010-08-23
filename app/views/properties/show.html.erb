@@ -25,11 +25,8 @@
   <%=h @property.bathrooms %>
 </p>
 
-<p>
-  <b>Notes:</b>
-  <%=h @property.notes %>
-</p>
-
+<b>Notes:</b>
+  <%= markdown(@property.notes) %>
 <p>
   <b>Address:</b><br/>
   <%=h @property.street %><br/>
