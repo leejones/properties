@@ -6,14 +6,25 @@
     <th>BA</th>
     <th>Address</th>
     <th>Type</th>
-    <th colspan="3">Actions</th>
+    <th colspan="2">Actions</th>
   </tr>
 
 <% properties.each do |property| %>
   <tr>
     <td>
       <% if property.photos %>
-        <%= image_tag property.photos.first.url, :alt => property.photos.first.caption, :width => 75, :style => "padding:0px" %>
+        <%= 
+          link_to(
+            image_tag(
+              property.photos.first.url, 
+              :alt => property.photos.first.caption, 
+              :width => 75, 
+              :style => "padding:0px"
+            ), 
+          property) 
+        %>
+      <% else %>
+        <%= link_to 'Show', property %>
       <% end %>
     </td>
     <td><%=h number_to_currency(property.price) %></td>
@@ -21,7 +32,6 @@
     <td><%=h property.bathrooms %></td>
     <td><%=h truncate(property.street) %>, <%=h property.city %></td>
     <td><%=h truncate(property.property_type.name) if property.property_type %></td>
-    <td><%= link_to 'Show', property %></td>
     <td><%= link_to 'Edit', edit_property_path(property) %></td>
     <td><%= link_to 'Destroy', property, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
