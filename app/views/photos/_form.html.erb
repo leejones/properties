@@ -3,7 +3,7 @@
 
   <p>
     <%= f.label :property_id %><br />
-    <%= f.collection_select(:property_id, @properties, :id, :street, {:prompt => true})  %>
+    <%= f.collection_select(:property_id, @properties, :id, :street)  %>
   </p>
   <p>
     <%= f.label :url %><br />

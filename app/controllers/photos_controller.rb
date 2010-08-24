@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
   # GET /photos/new.xml
   def new
     @photo = Photo.new
-    @properties = Property.all
+    @properties = Property.all(:order => "created_at DESC")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,7 +36,7 @@ class PhotosController < ApplicationController
   # GET /photos/1/edit
   def edit
     @photo = Photo.find(params[:id])
-    @properties = Property.all
+    @properties = Property.all(:order => "created_at DESC")
   end
 
   # POST /photos
