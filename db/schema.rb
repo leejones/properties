@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100823041952) do
+ActiveRecord::Schema.define(:version => 20100825042628) do
 
   create_table "photos", :force => true do |t|
     t.integer  "property_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20100823041952) do
     t.datetime "updated_at"
     t.boolean  "favorite",                                                      :default => false
     t.integer  "property_type_id"
+    t.boolean  "archived",                                                      :default => false
   end
 
   create_table "property_types", :force => true do |t|

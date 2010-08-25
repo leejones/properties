@@ -64,6 +64,11 @@
   <% end %>
 
   <p>
+    <%= f.check_box :archived %> 
+    <%= f.label :archived, "Archive?" %>
+  </p>
+
+  <p>
     <%= f.submit button_text %>
   </p>
 <% end %>

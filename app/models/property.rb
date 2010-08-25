@@ -5,6 +5,8 @@ class Property < ActiveRecord::Base
     :reject_if => lambda { |p| p[:url].blank? }, 
     :allow_destroy => true
     
-  named_scope :favorites, :conditions => { :favorite => true }
-  named_scope :unfavorites, :conditions => { :favorite => false }
+  named_scope :favorites, :conditions => { :favorite => true, :archived => false }
+  named_scope :unfavorites, :conditions => { :favorite => false, :archived => false }
+  named_scope :active, :conditions => { :archived => false }
+  named_scope :archives, :conditions => { :archived => true }
 end

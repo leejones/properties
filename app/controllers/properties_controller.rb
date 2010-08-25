@@ -4,6 +4,7 @@ class PropertiesController < ApplicationController
   def index
     @favorite_properties = Property.favorites
     @unfavorite_properties = Property.unfavorites
+    @archived_properties = Property.archives
 
     respond_to do |format|
       format.html # index.html.erb
