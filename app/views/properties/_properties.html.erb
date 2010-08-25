@@ -13,7 +13,7 @@
 <% properties.each do |property| %>
   <tr>
     <td>
-      <% if property.photos %>
+      <% if property.photos.count > 0 %>
         <%= 
           link_to(
             image_tag(
