@@ -4,9 +4,9 @@
 
 <div class="tabs">
     <ul class="tabnavigation">
-        <li><a href="#favorites">Favorites</a></li>
-        <li><a href="#others">Others</a></li>
-        <li><a href="#archives">Archives</a></li>
+        <li><a href="#favorites">Favorites (<%= @favorite_properties.size %>)</a></li>
+        <li><a href="#others">Others (<%= @unfavorite_properties.size %>)</a></li>
+        <li><a href="#archives">Archives (<%= @archived_properties.size %>)</a></li>
     </ul>
     <div id="favorites">
         <h2>Favorites</h2>
