@@ -28,7 +28,7 @@
 <b>Notes:</b>
   <%= markdown(@property.notes) %>
 <p>
-  <b>Address:</b><br/>
+  <b>Address:</b>(<%= link_to 'map', "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(@property.street.gsub(/\s/, '+'))},#{CGI::escape(@property.city.gsub(/\s/, '+'))},#{CGI::escape(@property.state.gsub(/\s/, '+'))},#{CGI::escape(@property.zip.to_s.gsub(/\s/, '+'))}&z=17"%>)<br/>
   <%=h @property.street %><br/>
   <%=h @property.city %>, <%=h @property.state %>&nbsp;&nbsp;<%=h @property.zip %>
 </p>
