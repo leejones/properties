@@ -2,15 +2,25 @@
     <%= link_to 'New property', new_property_path %>
 </p>
 
-<h2>Favorites</h2>
+<div class="tabs">
+    <ul class="tabnavigation">
+        <li><a href="#favorites">Favorites</a></li>
+        <li><a href="#others">Others</a></li>
+        <li><a href="#archives">Archives</a></li>
+    </ul>
+    <div id="favorites">
+        <h2>Favorites</h2>
+        <%= render :partial => "properties", :locals => { :properties => @favorite_properties }%>
+    </div>
 
-<%= render :partial => "properties", :locals => { :properties => @favorite_properties }%>
+    <div id="others">
+        <h2>Others</h2>
+        <%= render :partial => "properties", :locals => { :properties => @unfavorite_properties }%>
+    </div>
 
-<h2>Others</h2>
-
-<%= render :partial => "properties", :locals => { :properties => @unfavorite_properties }%>
-
-<h2>Archives</h2>
-
-<%= render :partial => "properties", :locals => { :properties => @archived_properties }%>
+    <div id="archives">
+        <h2>Archives</h2>
+        <%= render :partial => "properties", :locals => { :properties => @archived_properties }%>
+    </div>
+</div>
 
