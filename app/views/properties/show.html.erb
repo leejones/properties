@@ -1,7 +1,9 @@
+<h2><%= title_for_property(@property) %></h2>
+
 <p>
-<% @property.photos.each do |photo| %>
+  <% @property.photos.each do |photo| %>
     <%= image_tag photo.url, :alt => photo.caption, :width => 300, :style => "padding:5px" %>
-<% end %>
+  <% end %>
 </p>
 
 <% if @property.listing_url %>
@@ -26,7 +28,7 @@
 </p>
 
 <b>Notes:</b>
-  <%= markdown(@property.notes) %>
+<%= markdown(@property.notes) %>
 
 <p>
   <b>Phone:</b> 

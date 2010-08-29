@@ -4,7 +4,7 @@
     <th>Rent</th>
     <th>BR</th>
     <th>BA</th>
-    <th>Street</th>
+    <th>Name/Street</th>
     <th>City</th>
     <th>Type</th>
     <th colspan="2">Actions</th>
@@ -31,7 +31,7 @@
     <td><%=h number_to_currency(property.price) %></td>
     <td><%=h property.bedrooms %></td>
     <td><%=h property.bathrooms %></td>
-    <td><%= link_to_google_maps(truncate(property.street), property) %></td>
+    <td><%= link_to_google_maps(truncate(title_for_property(property)), property) %></td>
     <td><%=h property.city %></td>
     <td><%=h truncate(property.property_type.name) if property.property_type %></td>
     <td><%= link_to 'Edit', edit_property_path(property) %></td>
