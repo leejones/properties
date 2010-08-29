@@ -1,6 +1,15 @@
 <h1>Editing property</h1>
 
-<%= render :partial => "form", :locals => { :button_text => "Update" } %>
+<div id="property_form">
+  <%= render :partial => "form", :locals => { :button_text => "Update" } %>
 
-<%= link_to 'Show', @property %> |
-<%= link_to 'Back', properties_path %>
+  <%= link_to 'Show', @property %> |
+  <%= link_to 'Back', properties_path %>
+</div><!-- #property_form -->
+
+<div id="original_listing">
+  <% if @property.listing_url %>
+    <h2>Original Listing</h2>
+    <iframe src="<%= @property.listing_url %>" width="550" height="500"></iframe>
+  <% end %>
+</div>

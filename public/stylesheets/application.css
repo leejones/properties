@@ -44,3 +44,13 @@ div.tabs > div h2 {
 .waste {
 	min-height: 1000px;
 }
+
+#property_form {
+	float: left;
+	width: 400px;
+}
+#original_listing {
+	float: left;
+	width: 510px;
+	margin: 0 0 0 50px;
+}

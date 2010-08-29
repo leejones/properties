@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	// tabs
 	var tabContainers = $('div.tabs > div');
 	tabContainers.hide().filter(':first').show();
 	
@@ -8,4 +9,7 @@ $(document).ready(function(){
 		$(this).addClass('selected');
 		return false;
 	}).filter(':first').click(0);
+	
+	// load original listing in propery form
+	var listingIframe = $('iframe#listing');
 });
