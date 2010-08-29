@@ -7,9 +7,9 @@
   <%= link_to 'Back', properties_path %>
 </div><!-- #property_form -->
 
-<div id="original_listing">
+<div id="original_listing_container">
   <% if @property.listing_url %>
     <h2>Original Listing</h2>
-    <iframe src="<%= @property.listing_url %>" width="550" height="500"></iframe>
+    <iframe id="original_listing" src="<%= @property.listing_url %>" width="550" height="500"></iframe>
   <% end %>
 </div>

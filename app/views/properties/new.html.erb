@@ -1,5 +1,12 @@
 <h1>New property</h1>
 
-<%= render :partial => "form", :locals => { :button_text => "Create" } %>
+<div id="property_form">
+  <%= render :partial => "form", :locals => { :button_text => "Create" } %>
 
-<%= link_to 'Back', properties_path %>
+  <%= link_to 'Back', properties_path %>
+</div><!-- #property_form -->
+
+<div id="original_listing_container">
+    <h2>Original Listing</h2>
+    <iframe id="original_listing" src="<%= @property.listing_url %>" width="550" height="500"></iframe>
+</div>

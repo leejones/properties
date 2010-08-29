@@ -11,5 +11,13 @@ $(document).ready(function(){
 	}).filter(':first').click(0);
 	
 	// load original listing in propery form
-	var listingIframe = $('iframe#listing');
+	var listingIframe = $('iframe#original_listing')[0];
+	if (listingIframe) {
+		$("input#property_listing_url").change(function(){
+			var listing_url = this.value;
+			if (listing_url != "") {
+				listingIframe.src = listing_url;
+			}
+		});
+	}
 });

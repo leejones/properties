@@ -6,6 +6,10 @@
     <%= f.label :favorite, "Favorite?" %>
   </p>
   <p>
+    <%= f.label :listing_url %><br />
+    <%= f.text_field :listing_url %>
+  </p>
+  <p>
     <%= f.label :name %> (if any)<br />
     <%= f.text_field :name %>
   </p>
@@ -48,10 +52,6 @@
   <p>
     <%= f.label :zip %><br />
     <%= f.text_field :zip %>
-  </p>
-  <p>
-    <%= f.label :listing_url %><br />
-    <%= f.text_field :listing_url %>
   </p>
 
   <% f.fields_for :photos do |photo| %>
