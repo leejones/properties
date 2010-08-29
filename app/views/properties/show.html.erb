@@ -27,6 +27,12 @@
 
 <b>Notes:</b>
   <%= markdown(@property.notes) %>
+
+<p>
+  <b>Phone:</b> 
+  <%=h @property.phone %>
+</p>
+
 <p>
   <b>Address:</b>(<%= link_to_google_maps('map', @property) %>)<br/>
   <%=h @property.street %><br/>
