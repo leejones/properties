@@ -5,8 +5,8 @@ class Property < ActiveRecord::Base
     :reject_if => lambda { |p| p[:url].blank? }, 
     :allow_destroy => true
     
-  named_scope :favorites, :conditions => { :favorite => true, :archived => false }, :order => "updated_at DESC"
-  named_scope :unfavorites, :conditions => { :favorite => false, :archived => false }, :order => "updated_at DESC"
-  named_scope :active, :conditions => { :archived => false }, :order => "updated_at DESC"
-  named_scope :archives, :conditions => { :archived => true }, :order => "updated_at DESC"
+  scope :favorites, :conditions => { :favorite => true, :archived => false }, :order => "updated_at DESC"
+  scope :unfavorites, :conditions => { :favorite => false, :archived => false }, :order => "updated_at DESC"
+  scope :active, :conditions => { :archived => false }, :order => "updated_at DESC"
+  scope :archives, :conditions => { :archived => true }, :order => "updated_at DESC"
 end
