@@ -14,7 +14,7 @@ safe do
   #   :timestamp -> current run timestamp (same for all the backups in the same 'run')
   # you can set separate :path for all backups (or once globally here)
   local do
-    path "/Users/leejones/Dropbox/Backups/WebApps/Properties/#{frequency}"
+    path "/srv/properties/shared/backup/#{frequency}"
   end
 
   ## uncomment to enable uploads to Amazon S3
