@@ -30,9 +30,9 @@ class ApplicationManifest < Moonshine::Manifest::Rails
 
     gem 'astrails-safe', :ensure => :installed
 
-    backup = "RAILS_ENV=#{ENV['RAILS_ENV']} astrails-safe  #{configuration[:deploy_to]}/current/config/astrails-safe.config.erb"
+    backup = "RAILS_ENV=#{ENV['RAILS_ENV']} astrails-safe  #{configuration[:deploy_to]}/current/config/astrails-safe.conf.erb"
     hourly_backup = "frequency=hourly keep_local=24 #{backup}"
-    daily_backup = "daily=daily keep_local=30 #{backup}"
+    daily_backup = "frequency=daily keep_local=30 #{backup}"
 
     cron 'hourly backup', :command => hourly_backup, :user => configuration[:user], :minute => 0
     cron 'daily backup', :command => daily_backup, :user => configuration[:user], :hour => 0, :minute => 30
