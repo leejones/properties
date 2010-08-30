@@ -2,7 +2,7 @@ require 'yaml'
 
 class User
   def self.all
-    YAML.load_file(File.join(File.dirname(__FILE__), '../..', 'config', 'authentication.yml'))[:users]
+    YAML.load_file(File.join(File.dirname(__FILE__), '../..', 'config', 'users.yml'))[:users]
   end
   
   def self.authenticate(username, password)
