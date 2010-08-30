@@ -1,5 +1,8 @@
-tmp
-log
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+
 .DS_Store
 todo.txt
 config/database.yml
