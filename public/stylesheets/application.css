@@ -49,8 +49,12 @@ div.tabs > div h2 {
 	float: left;
 	width: 400px;
 }
-#original_listing {
+#original_listing_container {
 	float: left;
 	width: 510px;
 	margin: 0 0 0 50px;
+}
+
+#original_listing {
+	position: fixed;
 }
