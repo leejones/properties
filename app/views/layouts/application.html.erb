@@ -6,13 +6,19 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Properties</title>
   <%= stylesheet_link_tag 'boilerplate', 'scaffold', 'application', :cache => true %>
-  <%= javascript_include_tag 'jquery', 'application', :cache => true %>
+  <%= javascript_include_tag 'jquery', 'jquery_ujs', 'application', :cache => true %>
 </head>
 <body>
 
 <div id="main">
 
 <h1><a href="/">Properties</a></h1>
+
+<% if current_user %>
+<p>Signed in as <%= current_user.email %>. <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></p>
+<% else %>
+<p><%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %></p>
+<% end %>
 
 <p style="color: green"><%= notice %></p>
 <p style="color: red"><%= alert %></p>
